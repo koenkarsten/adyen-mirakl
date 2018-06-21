@@ -13,12 +13,6 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-
-management:
-    health:
-        mail:
-            enabled: false # When using the MailService, configure an SMTP server and set this to true
-
 spring:
     application:
         name: adyenMiraklConnector
@@ -134,6 +128,7 @@ adyenConfig:
     password: ${ADYEN_PASS}
     environment: ${ADYEN_ENV}
     appName: adyen-mirakl-connector
+    appVersion: 1.0.0
 
 adyenNotificationsConfig:
     notificationConfigurationDetails:
@@ -189,10 +184,13 @@ mailtrapConfig:
 
 payoutService:
     subscriptionTransferCode: SUBSCRIPTION
-    transferCode: TransferCode_1
     liableAccountCode: ${ADYEN_LIABLE_ACCOUNT_CODE}
 
 accounts:
     accountCode:
-        sourceAccountCode: 131712554
-        zeroBalanceSourceAccountCode: 185335929
+        sourceAccountCode: 148401008
+        zeroBalanceSourceAccountCode: 163126229
+    adyenPal:
+        username: ${ADYEN_PAL_USERNAME}
+        password: ${ADYEN_PAL_PASSWORD}
+        merchantAccount: ${ADYEN_PAL_MERCHANT_ACCOUNT}
